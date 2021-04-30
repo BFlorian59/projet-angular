@@ -1,0 +1,42 @@
+<form [formGroup]="gentilForm" (ngSubmit)="onSubmit(gentilForm.value)">
+  <h2 mat-dialog-title>Gentil FORM</h2>
+  <mat-dialog-content class="mat-typography">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="Name" required />
+        <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Fonction</mat-label>
+        <input matInput type="text" formControlName="fonction" required />
+        <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Faction</mat-label>
+        <mat-select formControlName="factions" required>
+          <mat-option *ngFor="let factions of faction" [value]="factions">
+            {{ factions }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-button
+      type="submit"
+      cdkFocusInitial
+      [disabled]="!gentilForm.valid"
+    >
+      Ajout
+    </button>
+  </mat-dialog-actions>
+</form>

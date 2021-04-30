@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  studentEndpoint: 'http://localhost:3000/gentil',
 };

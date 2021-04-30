@@ -1,28 +1,28 @@
 {
-    "faction": [
-      {
-        "id": 1,
-        "nom": "République",
-        "role": "gentil"
-      },
-      {
-        "id": 2,
-        "nom": " Empire Sith",
-        "role": "méchant"
-      }
-    ],
-    "nom": [
-      {
-        "id": 1,
-        "nom": "Dark Revan",
-        "fonction": "Seigneur Noir des Sith",
-        "factionId": 2
-      },
-      {
-        "id": 2,
-        "nom": "Bastila Shan",
-        "fonction": "Chevalier jedi",
-        "factionId": 1
-      }
-    ]
-  }
+  "faction": [
+    {
+      "id": 1,
+      "nom": "République",
+      "role": "gentil"
+    },
+    {
+      "id": 2,
+      "nom": " Empire Sith",
+      "role": "méchant"
+    }
+  ],
+  "gentil": [
+    {
+      "id": 1,
+      "nom": "Dark Revan",
+      "fonction": "Seigneur Noir des Sith",
+      "factionId": 2
+    },
+    {
+      "id": 2,
+      "nom": "Bastila Shan",
+      "fonction": "Chevalier jedi",
+      "factionId": 1
+    }
+  ]
+}
