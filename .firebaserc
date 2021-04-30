@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "projet-angular-8c27e": {
+      "hosting": {
+        "projet-angular": [
+          "projet-angular-8c27e"
+        ]
+      }
+    }
+  }
+}
