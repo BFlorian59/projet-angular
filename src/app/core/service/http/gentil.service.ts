@@ -24,11 +24,8 @@ export class GentilService {
     return this._httpClient.post<Gentil>(this.endPoint, gentil);
   }
 
-  put(gentil: Gentil): Observable<Gentil> {
-    return this._httpClient.put<Gentil>(
-      this.endPoint + '/' + gentil.id,
-      gentil
-    );
+  put(gentil: Gentil, id: number): Observable<Gentil> {
+    return this._httpClient.put<Gentil>(this.endPoint + '/' + id, gentil);
   }
 
   delete(gentil: Gentil): Observable<Gentil> {

@@ -18,8 +18,9 @@ import { GentilService } from 'src/app/core/service/http/gentil.service';
 })
 export class NomFormUpdateComponent implements OnInit {
   gentilForm: FormGroup;
-  nomId: any;
+
   faction: string[] = ['Méchant', 'Gentil'];
+  nomId: number | undefined;
 
   constructor(
     private fb: FormBuilder,
@@ -41,7 +42,7 @@ export class NomFormUpdateComponent implements OnInit {
 
   onSubmit(gentil: Gentil) {
     if (this.gentilForm.valid) {
-      this._gentilService.put(gentil).subscribe((next) => {
+      this._gentilService.put(gentil, this.data.id).subscribe((next) => {
         console.log('YES');
         this.gentilForm.reset();
         this._dialogRef.close();

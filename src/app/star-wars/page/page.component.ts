@@ -1,6 +1,7 @@
 import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Gentil } from 'src/app/core/models/gentil';
 import { GentilService } from 'src/app/core/service/http/gentil.service';
@@ -15,7 +16,7 @@ import { GentilFormComponent } from '../components/nom-form/gentil-form.componen
 })
 export class PageComponent implements OnInit {
   gentil$: Observable<Gentil[]> = new Observable<Gentil[]>();
-  nomId: any;
+
   displayedColumns: string[] = [
     'id',
     'nom',
@@ -24,13 +25,16 @@ export class PageComponent implements OnInit {
     'update',
     'delete',
   ];
+  nomId: any;
 
   constructor(
+    private _activateRoute: ActivatedRoute,
     private _gentilService: GentilService,
     public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
+    this.nomId = Number(this._activateRoute.snapshot.paramMap.get('id'));
     this.loadData();
   }
 
@@ -73,6 +77,7 @@ export class PageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
+      this.loadData();
       window.location.reload();
     });
   }
