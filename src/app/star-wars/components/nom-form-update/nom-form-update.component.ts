@@ -18,7 +18,7 @@ import { GentilService } from 'src/app/core/service/http/gentil.service';
 })
 export class NomFormUpdateComponent implements OnInit {
   gentilForm: FormGroup;
-  nomId: number | undefined;
+  nomId: any;
   faction: string[] = ['Méchant', 'Gentil'];
 
   constructor(
@@ -29,9 +29,9 @@ export class NomFormUpdateComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Gentil
   ) {
     this.gentilForm = this.fb.group({
-      Name: ['', [Validators.required, this.noWhitespaceValidator]],
-      faction: ['', [Validators.required, this.noWhitespaceValidator]],
-      fonction: ['', Validators.required, this.noWhitespaceValidator],
+      nom: ['', [Validators.required, this.noWhitespaceValidator]],
+      factionId: ['', [Validators.required, this.noWhitespaceValidator]],
+      fonction: ['', Validators.required],
     });
   }
 
@@ -41,7 +41,7 @@ export class NomFormUpdateComponent implements OnInit {
 
   onSubmit(gentil: Gentil) {
     if (this.gentilForm.valid) {
-      this._gentilService.put(gentil, this.data.id).subscribe((next) => {
+      this._gentilService.put(gentil).subscribe((next) => {
         console.log('YES');
         this.gentilForm.reset();
         this._dialogRef.close();

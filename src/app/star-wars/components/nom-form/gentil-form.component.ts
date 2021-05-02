@@ -24,9 +24,9 @@ export class GentilFormComponent implements OnInit {
     private _dialogRef: MatDialogRef<GentilFormComponent>
   ) {
     this.gentilForm = this.fb.group({
-      Name: ['', [Validators.required, this.noWhitespaceValidator]],
+      nom: ['', [Validators.required, this.noWhitespaceValidator]],
       fonction: ['', [Validators.required, this.noWhitespaceValidator]],
-      faction: ['', Validators.required, this.noWhitespaceValidator],
+      factionId: ['', Validators.required],
     });
   }
 

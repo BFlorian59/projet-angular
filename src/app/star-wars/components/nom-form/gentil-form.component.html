@@ -4,7 +4,7 @@
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput type="text" formControlName="Name" required />
+        <input matInput type="text" formControlName="nom" required />
         <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
       </mat-form-field>
     </div>
@@ -20,7 +20,7 @@
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Faction</mat-label>
-        <mat-select formControlName="factions" required>
+        <mat-select formControlName="factionId" required>
           <mat-option *ngFor="let factions of faction" [value]="factions">
             {{ factions }}
           </mat-option>

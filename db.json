@@ -23,6 +23,18 @@
       "nom": "Bastila Shan",
       "fonction": "Chevalier jedi",
       "factionId": 1
+    },
+    {
+      "nom": "Luke Skywalker",
+      "fonction": "Jedi",
+      "factionId": "Gentil",
+      "id": 3
+    },
+    {
+      "nom": "Palpatine",
+      "fonction": "Maitre Sith",
+      "factionId": "Méchant",
+      "id": 4
     }
   ]
 }

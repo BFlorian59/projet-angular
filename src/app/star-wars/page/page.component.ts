@@ -15,7 +15,7 @@ import { GentilFormComponent } from '../components/nom-form/gentil-form.componen
 })
 export class PageComponent implements OnInit {
   gentil$: Observable<Gentil[]> = new Observable<Gentil[]>();
-  nomId: number | undefined;
+  nomId: any;
   displayedColumns: string[] = [
     'id',
     'nom',
@@ -50,6 +50,7 @@ export class PageComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
       this.loadData();
+      window.location.reload();
     });
   }
 
@@ -59,6 +60,7 @@ export class PageComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
       this.loadData();
+      window.location.reload();
     });
   }
 
