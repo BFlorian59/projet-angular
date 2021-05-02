@@ -38,6 +38,10 @@ export class PageComponent implements OnInit {
     this.loadData();
   }
 
+  fetchData(id: number): void {
+    this.nomId = this._gentilService.getById(id);
+  }
+
   loadData() {
     this.gentil$ = this._gentilService.get();
   }
