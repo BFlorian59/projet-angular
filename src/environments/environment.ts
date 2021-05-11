@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  nomEndpoint: 'http://localhost:3000/gentil',
+  nomEndpoint: 'https://app-projetjs.herokuapp.com/gentil',
 };
 
 /*
